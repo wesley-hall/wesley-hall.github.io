@@ -1,0 +1,40 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("https://fonts.googleapis.com/css?family=Exo+2:400,600,700|Oxygen:400,700");
+body {
+  font-size: 10px; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Oxygen", sans-serif; }
+  body header {
+    height: 5em;
+    color: #F7F0F0;
+    background-color: #181A1B; }
+    body header nav {
+      height: 100%;
+      padding: 0 3em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+  body section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    body section:first-of-type, body section:last-of-type {
+      height: calc(100vh - 5em); }
+  body footer {
+    height: 5em;
+    background-color: #181A1B; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Exo 2", sans-serif;
+  text-transform: uppercase; }
+
+.text-center {
+  text-align: center; }
+
+/*# sourceMappingURL=styles.css.map */

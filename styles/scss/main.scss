@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 10px;
+}
+
+// Normalize CSS
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+// Imports
+@import 'variables';
+
+body {
+  font-family: $font-body;
+  header {
+    height: 5em;
+    color: $white;
+    background-color: $black;
+    nav {
+      height: 100%;
+      padding: 0 3em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:first-of-type, &:last-of-type {
+      height: calc(100vh - 5em);
+    }
+  }
+
+  footer {
+    height: 5em;
+    background-color: $black;
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
