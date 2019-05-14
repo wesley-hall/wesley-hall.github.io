@@ -1,12 +1,11 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 @import url("https://fonts.googleapis.com/css?family=Exo+2:400,600,700|Oxygen:400,700");
-body {
-  font-size: 10px; }
-
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 body {
+  font-size: 10px;
   font-family: "Oxygen", sans-serif; }
   body header {
     height: 5em;
@@ -26,13 +25,26 @@ body {
     align-items: center; }
     body section:first-of-type, body section:last-of-type {
       height: calc(100vh - 5em); }
+    body section:nth-of-type(odd) {
+      background-color: #F7F0F0; }
+    body section:nth-of-type(even) {
+      background-color: #224870;
+      color: #F7F0F0; }
   body footer {
     height: 5em;
-    background-color: #181A1B; }
+    background-color: #181A1B;
+    color: #F7F0F0;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Exo 2", sans-serif;
   text-transform: uppercase; }
+
+a {
+  text-decoration: none;
+  color: #5C9EAD; }
 
 .text-center {
   text-align: center; }

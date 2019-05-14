@@ -1,8 +1,6 @@
 * {
   box-sizing: border-box;
-}
-body {
-  font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 // Normalize CSS
@@ -12,6 +10,7 @@ body {
 @import 'variables';
 
 body {
+  font-size: $default-font-size;
   font-family: $font-body;
   header {
     height: 5em;
@@ -34,11 +33,21 @@ body {
     &:first-of-type, &:last-of-type {
       height: calc(100vh - 5em);
     }
+    &:nth-of-type(odd) {
+      background-color: $white;
+    }
+    &:nth-of-type(even) {
+      background-color: $blue;
+      color: $white;
+    }
   }
-
   footer {
     height: 5em;
     background-color: $black;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -46,6 +55,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-heading;
   text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: $link;
 }
 
 .text-center {
