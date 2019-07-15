@@ -11,3 +11,14 @@ $black: #181A1B;
 $blue: #224870;
 $link: #5C9EAD;
 $white: #F7F0F0;
+
+//
+$header-footer-height-mobile: 6em;
+$header-footer-height: 5em;
+$first-last-section-height-mobile: calc(100vh - 6em);
+$first-last-section-height: calc(100vh - 5em);
+
+// Breakpoints
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;

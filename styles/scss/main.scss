@@ -4,26 +4,20 @@
 }
 
 // Normalize CSS
-@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import '../css/normalize.css';
+
+// Font Awesome
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css');
 
 // Imports
 @import 'variables';
+@import 'typography';
+@import 'header';
+@import 'footer';
 
 body {
   font-size: $default-font-size;
   font-family: $font-body;
-  header {
-    height: 5em;
-    color: $white;
-    background-color: $black;
-    nav {
-      height: 100%;
-      padding: 0 3em;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
   section {
     height: 100vh;
     display: flex;
@@ -31,37 +25,82 @@ body {
     justify-content: center;
     align-items: center;
     &:first-of-type, &:last-of-type {
-      height: calc(100vh - 5em);
+      height: $first-last-section-height-mobile;
     }
     &:nth-of-type(odd) {
       background-color: $white;
+      a:hover {
+        color: $blue;
+      }
     }
     &:nth-of-type(even) {
       background-color: $blue;
       color: $white;
     }
+    &#banner {
+      h1 {
+        font-size: 3.75em;
+      }
+      h2 {
+        font-size: 2em;
+        margin-bottom: 2em;
+      }
+      div.links {
+        font-size: 1.5em;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        a {
+          display: flex;
+          flex: 50%;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1em;
+          i {
+            font-size: 2.25em;
+            margin: 0 0.25em 0.25em;
+          }
+        }
+      }
+    }
+    code {
+      text-transform: none;
+      span {
+        font-size: 0.75em;
+        &.brackets { color: #ABB2BF; }
+        &.tag { color: #E06C74; }
+      }
+    }
   }
-  footer {
-    height: 5em;
-    background-color: $black;
-    color: $white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  body section {
+    &:first-of-type, &:last-of-type {
+    height: $first-last-section-height;
+    }
+    &#banner {
+      h1 { font-size: 5em; }
+      h2 { font-size: 3em; }
+      div.links {
+        flex-direction: row;
+        a {
+          flex-direction: column;
+          flex: 25%;
+          i {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+          }
+        }
+      }
+    }
   }
 }
 
-// Typography
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-heading;
-  text-transform: uppercase;
-}
+@media (min-width: $breakpoint-desktop) {
 
-a {
-  text-decoration: none;
-  color: $link;
-}
-
-.text-center {
-  text-align: center;
 }

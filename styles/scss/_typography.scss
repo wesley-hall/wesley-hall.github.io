@@ -1,0 +1,14 @@
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: $link;
+}
+
+.text-center {
+  text-align: center;
+}
