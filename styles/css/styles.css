@@ -82,12 +82,12 @@ body > header {
 @media (max-width: 768px) {
   body > header > nav > div.nav-secondary.hidden-mobile {
     display: none; } }
-body section#banner h1 {
+body > section#banner h1 {
   font-size: 3.75em; }
-body section#banner h2 {
+body > section#banner h2 {
   font-size: 2em;
   margin-bottom: 2em; }
-body section#banner div.links {
+body > section#banner div.links {
   font-size: 1.5em;
   font-weight: bold;
   display: flex;
@@ -95,30 +95,36 @@ body section#banner div.links {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap; }
-  body section#banner div.links a {
+  body > section#banner div.links a {
     display: flex;
     flex: 50%;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1em; }
-    body section#banner div.links a i {
+    body > section#banner div.links a i {
       font-size: 2.25em;
       margin: 0 0.25em 0.25em; }
 
 @media (min-width: 768px) {
-  body section#banner h1 {
+  body > section#banner h1 {
     font-size: 5em; }
-  body section#banner h2 {
+  body > section#banner h2 {
     font-size: 3em; }
-  body section#banner div.links {
+  body > section#banner div.links {
     flex-direction: row; }
-    body section#banner div.links a {
+    body > section#banner div.links a {
       flex-direction: column;
       flex: 25%; }
-      body section#banner div.links a i {
+      body > section#banner div.links a i {
         font-size: 3em;
         margin-bottom: 0.5em; } }
+body > section#skills div {
+  display: block; }
+
+@media (min-width: 768px) {
+  body > section#skills div {
+    display: block; } }
 body > section {
   height: 100vh;
   display: flex;
