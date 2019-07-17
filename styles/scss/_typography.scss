@@ -1,6 +1,11 @@
 // Typography
+body {
+  font-size: $font-size-default;
+  font-family: $font-family-body;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-heading;
+  font-family: $font-family-heading;
   text-transform: uppercase;
 }
 
