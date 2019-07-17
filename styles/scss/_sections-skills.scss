@@ -1,0 +1,13 @@
+body > section#skills {
+    div {
+        display: block;
+    }
+}
+      
+@media (min-width: $breakpoint-tablet) {
+    body > section#skills {
+        div {
+            display: block;
+        }
+    }
+}
