@@ -9,98 +9,12 @@
 // Font Awesome
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css');
 
+// Devicon
+@import url('https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css'); 
+
 // Imports
 @import 'variables';
 @import 'typography';
 @import 'header';
+@import 'sections';
 @import 'footer';
-
-body {
-  font-size: $default-font-size;
-  font-family: $font-body;
-  section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    &:first-of-type, &:last-of-type {
-      height: $first-last-section-height-mobile;
-    }
-    &:nth-of-type(odd) {
-      background-color: $white;
-      a:hover {
-        color: $blue;
-      }
-    }
-    &:nth-of-type(even) {
-      background-color: $blue;
-      color: $white;
-    }
-    &#banner {
-      h1 {
-        font-size: 3.75em;
-      }
-      h2 {
-        font-size: 2em;
-        margin-bottom: 2em;
-      }
-      div.links {
-        font-size: 1.5em;
-        font-weight: bold;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        a {
-          display: flex;
-          flex: 50%;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 1em;
-          i {
-            font-size: 2.25em;
-            margin: 0 0.25em 0.25em;
-          }
-        }
-      }
-    }
-    code {
-      text-transform: none;
-      span {
-        font-size: 0.75em;
-        &.brackets { color: #ABB2BF; }
-        &.tag { color: #E06C74; }
-      }
-    }
-  }
-}
-
-@media (min-width: $breakpoint-tablet) {
-  body section {
-    &:first-of-type, &:last-of-type {
-    height: $first-last-section-height;
-    }
-    &#banner {
-      h1 { font-size: 5em; }
-      h2 { font-size: 3em; }
-      div.links {
-        flex-direction: row;
-        a {
-          flex-direction: column;
-          flex: 25%;
-          i {
-            font-size: 3em;
-            margin-bottom: 0.5em;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: $breakpoint-desktop) {
-
-}
