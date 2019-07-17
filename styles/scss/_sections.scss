@@ -1,0 +1,38 @@
+@import 'sections-banner';
+
+body > section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:first-of-type, &:last-of-type {
+    height: $first-last-section-height-mobile;
+    }
+    &:nth-of-type(odd) {
+    background-color: $white;
+    a:hover {
+        color: $blue;
+    }
+    }
+    &:nth-of-type(even) {
+    background-color: $blue;
+    color: $white;
+    }
+    code {
+    text-transform: none;
+    span {
+        font-size: 0.75em;
+        &.brackets { color: #ABB2BF; }
+        &.tag { color: #E06C74; }
+    }
+    }
+}
+  
+@media (min-width: $breakpoint-tablet) {
+    body > section {
+        &:first-of-type, &:last-of-type {
+        height: $first-last-section-height;
+        }
+    }
+}
