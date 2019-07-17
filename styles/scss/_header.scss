@@ -1,49 +1,46 @@
-body {
-  header {
-    height: $header-footer-height-mobile;
-    color: $white;
-    background-color: $black;
-    nav {
-      height: 100%;
-      padding: 0 3em;
-      font-size: 1.25em;
-      text-transform: uppercase;
+body > header {
+  min-height: $header-footer-height-mobile;
+  color: $white;
+  background-color: $black;
+  nav {
+    height: 100%;
+    padding: 0 3em;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    div.nav-primary {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      flex-basis: 100%;
+      font-family: $font-family-heading;
+      font-size: 1.5em;
       display: flex;
-      flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      div.nav-primary {
-        font-family: $font-heading;
-        font-size: 1.5em;
-      }
-      div.nav-control { font-size: 1.5em; }
-      div.nav-secondary {
-        flex-basis: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        a {
-          padding: 0 1em;
-          border-right: 1px $white solid;
-          &:last-child {
-            padding-right: 0;
-            border-right: 1px transparent solid;
-          }
-          &:hover {
-            color: $white;
-          }
-        }
+      // div.nav-control { font-size: 1.25em; }
+    }
+    div.nav-secondary {
+      margin: 0.5em 0 1em;
+      padding: 0.25em 0.75em;
+      border-right: 2px $white solid;
+      flex-basis: 100%;
+      display: flex;
+      
+      flex-direction: column;
+      align-items: flex-end;
+      a {
+        padding-bottom: 0.25em;
       }
     }
   }
 }
 
-@media (max-width: $breakpoint-tablet) {
-  body header nav div.nav-secondary.hidden-mobile {
-    display: none;
-  }
-}
+
+
 @media (min-width: $breakpoint-tablet) {
   body > header {
     height: $header-footer-height;
@@ -51,7 +48,12 @@ body {
       flex-direction: row;
       justify-content: space-between;
       div.nav-control { display: none; }
+      div.nav-primary {
+        flex-basis: 40%;
+      }
       div.nav-secondary {
+        border: none;
+        margin: 1em 0;
         flex-direction: row;
         flex-basis: 40%;
         justify-content: flex-end;
@@ -71,6 +73,9 @@ body {
   }
 }
 
-@media (min-width: $breakpoint-desktop) {
-
+// hidden-mobile should only apply for mobile devices
+@media (max-width: $breakpoint-tablet) {
+  body > header > nav > div.nav-secondary.hidden-mobile {
+    display: none;
+  }
 }
