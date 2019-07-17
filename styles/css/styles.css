@@ -1,9 +1,14 @@
 @import url(../css/normalize.css);
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css");
+@import url("https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css");
 @import url("https://fonts.googleapis.com/css?family=Exo+2:400,600,700|Oxygen:400,700");
 * {
   box-sizing: border-box;
   scroll-behavior: smooth; }
+
+body {
+  font-size: 10px;
+  font-family: "Oxygen", sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Exo 2", sans-serif;
@@ -16,11 +21,11 @@ a {
 .text-center {
   text-align: center; }
 
-body header {
-  height: 6em;
+body > header {
+  min-height: 6em;
   color: #F7F0F0;
   background-color: #181A1B; }
-  body header nav {
+  body > header nav {
     height: 100%;
     padding: 0 3em;
     font-size: 1.25em;
@@ -30,28 +35,26 @@ body header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap; }
-    body header nav div.nav-primary {
+    body > header nav div.nav-primary {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      flex-basis: 100%;
       font-family: "Exo 2", sans-serif;
-      font-size: 1.5em; }
-    body header nav div.nav-control {
-      font-size: 1.5em; }
-    body header nav div.nav-secondary {
+      font-size: 1.5em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+    body > header nav div.nav-secondary {
+      margin: 0.5em 0 1em;
+      padding: 0.25em 0.75em;
+      border-right: 2px #F7F0F0 solid;
       flex-basis: 100%;
       display: flex;
       flex-direction: column;
       align-items: flex-end; }
-      body header nav div.nav-secondary a {
-        padding: 0 1em;
-        border-right: 1px #F7F0F0 solid; }
-        body header nav div.nav-secondary a:last-child {
-          padding-right: 0;
-          border-right: 1px transparent solid; }
-        body header nav div.nav-secondary a:hover {
-          color: #F7F0F0; }
+      body > header nav div.nav-secondary a {
+        padding-bottom: 0.25em; }
 
-@media (max-width: 768px) {
-  body header nav div.nav-secondary.hidden-mobile {
-    display: none; } }
 @media (min-width: 768px) {
   body > header {
     height: 5em; }
@@ -60,7 +63,11 @@ body header {
       justify-content: space-between; }
       body > header nav div.nav-control {
         display: none; }
+      body > header nav div.nav-primary {
+        flex-basis: 40%; }
       body > header nav div.nav-secondary {
+        border: none;
+        margin: 1em 0;
         flex-direction: row;
         flex-basis: 40%;
         justify-content: flex-end; }
@@ -72,70 +79,34 @@ body header {
             border-right: 1px transparent solid; }
           body > header nav div.nav-secondary a:hover {
             color: #F7F0F0; } }
-body footer {
-  height: 6em;
-  background-color: #181A1B;
-  color: #F7F0F0;
+@media (max-width: 768px) {
+  body > header > nav > div.nav-secondary.hidden-mobile {
+    display: none; } }
+body section#banner h1 {
+  font-size: 3.75em; }
+body section#banner h2 {
+  font-size: 2em;
+  margin-bottom: 2em; }
+body section#banner div.links {
+  font-size: 1.5em;
+  font-weight: bold;
   display: flex;
-  justify-content: center;
-  align-items: center; }
-
-@media (min-width: 768px) {
-  body > footer {
-    height: 5em; } }
-body {
-  font-size: 10px;
-  font-family: "Oxygen", sans-serif; }
-  body section {
-    height: 100vh;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; }
+  body section#banner div.links a {
     display: flex;
+    flex: 50%;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    body section:first-of-type, body section:last-of-type {
-      height: calc(100vh - 6em); }
-    body section:nth-of-type(odd) {
-      background-color: #F7F0F0; }
-      body section:nth-of-type(odd) a:hover {
-        color: #224870; }
-    body section:nth-of-type(even) {
-      background-color: #224870;
-      color: #F7F0F0; }
-    body section#banner h1 {
-      font-size: 3.75em; }
-    body section#banner h2 {
-      font-size: 2em;
-      margin-bottom: 2em; }
-    body section#banner div.links {
-      font-size: 1.5em;
-      font-weight: bold;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap; }
-      body section#banner div.links a {
-        display: flex;
-        flex: 50%;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1em; }
-        body section#banner div.links a i {
-          font-size: 2.25em;
-          margin: 0 0.25em 0.25em; }
-    body section code {
-      text-transform: none; }
-      body section code span {
-        font-size: 0.75em; }
-        body section code span.brackets {
-          color: #ABB2BF; }
-        body section code span.tag {
-          color: #E06C74; }
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em; }
+    body section#banner div.links a i {
+      font-size: 2.25em;
+      margin: 0 0.25em 0.25em; }
 
 @media (min-width: 768px) {
-  body section:first-of-type, body section:last-of-type {
-    height: calc(100vh - 5em); }
   body section#banner h1 {
     font-size: 5em; }
   body section#banner h2 {
@@ -148,5 +119,43 @@ body {
       body section#banner div.links a i {
         font-size: 3em;
         margin-bottom: 0.5em; } }
+body > section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  body > section:first-of-type, body > section:last-of-type {
+    height: calc(100vh - 6em); }
+  body > section:nth-of-type(odd) {
+    background-color: #F7F0F0; }
+    body > section:nth-of-type(odd) a:hover {
+      color: #224870; }
+  body > section:nth-of-type(even) {
+    background-color: #224870;
+    color: #F7F0F0; }
+  body > section code {
+    text-transform: none; }
+    body > section code span {
+      font-size: 0.75em; }
+      body > section code span.brackets {
+        color: #ABB2BF; }
+      body > section code span.tag {
+        color: #E06C74; }
+
+@media (min-width: 768px) {
+  body > section:first-of-type, body > section:last-of-type {
+    height: calc(100vh - 5em); } }
+body > footer {
+  height: 6em;
+  background-color: #181A1B;
+  color: #F7F0F0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+@media (min-width: 768px) {
+  body > footer {
+    height: 5em; } }
 
 /*# sourceMappingURL=styles.css.map */
